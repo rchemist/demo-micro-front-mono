@@ -24,7 +24,18 @@ _이때 반드시 기존 pom.xml 파일과 MonolithicFrontApplication.java 파�
 
 ### 3. 이미 예약된 Controller Endpoint
 
-다음 endpoint URL 은 플랫폼 내부에서 이미 사용중입니다. 추가 개발 시 아래 URL 은 사용할 수 없습니다.
+#### Built-in Controller Endpoint
+
+다음 설정을 통해 Built-in Controller 를 활성화 할 수 있습니다.(기본 true)
+
+```yaml
+platform:
+  config:
+    webmvc:
+      front: true   # 기본값이 true
+```
+
+이 설정이 활성화된 경우 아래 endpoint URL 은 플랫폼 내부에서 이미 사용중이므로, 추가 개발에서는 사용할 수 없습니다.
 
 **(중요) 해당 URL 로 endpoint 를 개발하게 되면 서비스가 실행되지 않습니다.**
 
@@ -57,6 +68,10 @@ IDE 에서 프로젝트를 열고 아래 각 Controller 를 탐색하면 실제 
 <br>
 
 `회원 가입 / 로그인을 구현할 때 CustomerAuthenticationController 를 참고하시기 바랍니다.`
+
+<br>
+
+**만약 `platform.config.webmvc.front` 값을 false 로 설정하면 RCM MicroShop 플랫폼이 제공하는 Front 의 모든 Controller 가 Bean 으로 등록되지 않고, Endpoint 도 추가되지 않습니다. 그래도 Service/Dao 와 같은 다른 Bean 은 모두 정상 작동하므로 Front View 를 독자적으로 개발하고자 하는 경우 이 값을 false 로 셋팅하면 됩니다.**
 
 <br>
 

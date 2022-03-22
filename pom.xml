@@ -462,7 +462,6 @@
   </dependencyManagement>
 
   <dependencies>
-
     <dependency>
       <groupId>io.rchemist</groupId>
       <artifactId>micro-front-mono</artifactId>
@@ -490,10 +489,14 @@
           <groupId>org.springframework.cloud</groupId>
           <artifactId>spring-cloud-config-client</artifactId>
         </exclusion>
+        
+        <exclusion>
+	      <groupId>org.springframework.cloud</groupId>
+	      <artifactId>spring-cloud-starter-bootstrap</artifactId>
+	    </exclusion>
+
       </exclusions>
     </dependency>
-
-
 
     <dependency>
       <groupId>org.projectlombok</groupId>

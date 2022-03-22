@@ -1,13 +1,12 @@
 spring:
   datasource:
     rcm-rdb:
-      # platform.config.datasource.data-per-services 가 true 인 경우에만 사용 - 서비스마다 DB 가 다를 때
       asset:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url:
-        password:
-        url:
-        username:
+        jdbc-url: jdbc:mysql://152.69.231.63:3306/mc_asset?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
+        password: rcm-pwd01
+        url: jdbc:mysql://152.69.231.63:3306/mc_asset?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
+        username: rcm-client
         hibernate:
           cache:
             use_query_cache: true
@@ -27,13 +26,12 @@ spring:
           hbm2ddl:
             auto: update
           show_sql: true
-    # platform.config.provider.mongo 가 true 인 경우에만 사용 - mongoDB 를 사용하는 경우
     rcm-mongo: # for override spring.data.mongodb.* values each at services
       asset:
-        connectionString: mongodb+srv://MONGO_CLIENT_ID:MONGO_CLIENT_PASSWORD@MONGODB_ADDRESS/rcm-asset?retryWrites=true&w=majority&connecttimeoutms=10000&sockettimeoutms=15000&waitqueuetimeoutms=3000&maxlifetimems=60000&maxlifetimems=120000&heartbeatfrequencyms=20000&ssl=true
+        connectionString: mongodb+srv://rcm-mongo-client:rcm-pwd@cluster0.gyh5s.mongodb.net/rcm-asset?retryWrites=true&w=majority&connecttimeoutms=10000&sockettimeoutms=15000&waitqueuetimeoutms=3000&maxlifetimems=60000&maxlifetimems=120000&heartbeatfrequencyms=20000&ssl=true
         database: rcm-asset
-        username:
-        password:
+        username: rcm-mongo-client
+        password: rcm-pwd
         retryWrite: true
         authSource: admin
   application:

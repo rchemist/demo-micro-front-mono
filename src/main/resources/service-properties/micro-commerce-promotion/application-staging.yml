@@ -1,0 +1,4 @@
+server:
+  port: 8480
+https:
+  port: 8481

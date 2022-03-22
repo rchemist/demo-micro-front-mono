@@ -29,10 +29,10 @@ spring:
     rcm-rdb:
       front:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url:
-        password:
-        url:
-        username:
+        jdbc-url: jdbc:mysql://152.69.231.63:3306/mc_common?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
+        password: rcm-pwd01
+        url: jdbc:mysql://152.69.231.63:3306/mc_common?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
+        username: rcm-client
         hibernate:
           cache:
             use_query_cache: true

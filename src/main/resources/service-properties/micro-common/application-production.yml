@@ -2,30 +2,30 @@ spring:
   cache:
     type: jcache
   redis:
-    host: #REDIS_ADDRESS
+    host: 3.34.51.245 #host: 152.67.208.203
     port: 6379
-    password: 
+    password: 'rcm-pwd01'
   data:
     mongodb:
       retryWrite: true
       authSource: admin
-      username: 
-      password: 
+      username: rcm-mongo-client
+      password: rcm-pwd
       database: rcm-common
       auto-index-creation: true
     elasticsearch:
       port: 9200
-      host: #ELASTIC_SEARCH_ADDRESS
-      username: 
-      password: 
+      host: 3.34.51.245
+      username: elastic
+      password: rcm-pwd01
   datasource:
     rcm-rdb:
       common:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://DB_ADDRESS:DB_PORT/mc_common?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
-        password: 
-        url: jdbc:mysql://DB_ADDRESS:DB_PORT/mc_common?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
-        username: 
+        jdbc-url: jdbc:mysql://152.69.231.63:3306/mc_common?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
+        password: rcm-pwd01
+        url: jdbc:mysql://152.69.231.63:3306/mc_common?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
+        username: rcm-client
         hibernate:
           cache:
             use_query_cache: true
@@ -57,18 +57,18 @@ spring:
           show_sql: true
     rcm-mongo:    # for override spring.data.mongodb.* values each at services
       common:
-        connectionString: mongodb+srv://MONGO_CLIENT_ID:MONGO_CLIENT_PASSWORD@MONGODB_ADDRESS/rcm-common?retryWrites=true&w=majority&connecttimeoutms=10000&sockettimeoutms=15000&waitqueuetimeoutms=3000&maxlifetimems=60000&maxlifetimems=120000&heartbeatfrequencyms=20000&ssl=true
+        connectionString: mongodb+srv://rcm-mongo-client:rcm-pwd@cluster0.gyh5s.mongodb.net/rcm-common?retryWrites=true&w=majority&connecttimeoutms=10000&sockettimeoutms=15000&waitqueuetimeoutms=3000&maxlifetimems=60000&maxlifetimems=120000&heartbeatfrequencyms=20000&ssl=true
         database: rcm-common
-        username: 
-        password: 
+        username: rcm-mongo-client
+        password: rcm-pwd
         retryWrite: true
         authSource: admin
     rcm-elastic: # for override spring.data.elasticsearch.* values each at services
       common:
         port: 9200
-        host: #ELASTIC_SEARCH_ADDRESS
-        username: 
-        password: 
+        host: 3.34.51.245
+        username: elastic
+        password: rcm-pwd01
   database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
   jpa:
     generate-ddl: true
@@ -134,8 +134,8 @@ spring:
             schema_management:
               minimal_required_status: yellow
               minimal_required_status_wait_timeout: 100000
-            username: 
-            password: 
+            username: elastic
+            password: rcm-pwd01
             analysis:
               configurer: class:io.rchemist.common.search.config.ElasticsearchKoreanAnalyzerConfigurer
       javax:
@@ -149,9 +149,9 @@ spring:
   elasticsearch:
     rest:
       port: 9200
-      host: #ELASTIC_SEARCH_ADDRESS
-      username: 
-      password: 
+      host: 3.34.51.245
+      username: elastic
+      password: rcm-pwd01
 thymeleaf:
   threadLocalCleanup:
     enabled: true
@@ -178,7 +178,7 @@ platform:
   config:
     security:
       token:
-        secret: CLIENT_TOKEN_SECRET_FILTER
+        secret: QU0tbzBqYGIraiM=Qy5WW303ajZyJmlPZ2lzSUM2NDppS31pSFwqXGBEcCpkU3o=aU04dkIxW1slKV5cb0hmUms=UlV7QHpY
         validity: 3600
     tenant:
       name: "micro-tenant(from git - common)"

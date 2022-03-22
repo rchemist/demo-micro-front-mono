@@ -3,12 +3,12 @@ spring:
     rcm-rdb:
       event:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        #jdbc-url: jdbc:mysql://DB_ADDRESS:DB_PORT/mc_event?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
-        jdbc-url: jdbc:mysql://DB_ADDRESS:DB_PORT/mc_common?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
-        password: 
-        #url: jdbc:mysql://DB_ADDRESS:DB_PORT/mc_event?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
-        url: jdbc:mysql://DB_ADDRESS:DB_PORT/mc_common?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
-        username: 
+        #jdbc-url: jdbc:mysql://152.69.231.63:3306/mc_event?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
+        jdbc-url: jdbc:mysql://152.69.231.63:3306/mc_common?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
+        password: rcm-pwd01
+        #url: jdbc:mysql://152.69.231.63:3306/mc_event?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
+        url: jdbc:mysql://152.69.231.63:3306/mc_common?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull
+        username: rcm-client
         hibernate:
           cache:
             use_query_cache: true
@@ -56,10 +56,10 @@ spring:
           show_sql: true
     rcm-mongo: # for override spring.data.mongodb.* values each at services
       event:
-        connectionString: mongodb+srv://MONGO_CLIENT_ID:MONGO_CLIENT_PASSWORD@MONGODB_ADDRESS/rcm-event?retryWrites=true&w=majority&connecttimeoutms=10000&sockettimeoutms=15000&waitqueuetimeoutms=3000&maxlifetimems=60000&maxlifetimems=120000&heartbeatfrequencyms=20000&ssl=true
+        connectionString: mongodb+srv://rcm-mongo-client:rcm-pwd@cluster0.gyh5s.mongodb.net/rcm-event?retryWrites=true&w=majority&connecttimeoutms=10000&sockettimeoutms=15000&waitqueuetimeoutms=3000&maxlifetimems=60000&maxlifetimems=120000&heartbeatfrequencyms=20000&ssl=true
         database: rcm-event
-        username: 
-        password: 
+        username: rcm-mongo-client
+        password: rcm-pwd
         retryWrite: true
         authSource: admin
   application:

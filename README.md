@@ -1,7 +1,17 @@
 # demo-micro-front-mono
 
-RCM-MicroShop을 Monolithic 모드로 띄울 때 사용할 수 있는 boilerplate code service 입니다.
-RCM-MicroShop 플랫폼의 코드는 https://github.com/rchemist/release-micro 에 공개되어 있습니다.
+
+`RCM-MicroShop 플랫폼은 마이크로 서비스 플랫픔으로, 각 서비스 별 API 를 제공하며, JWT 토큰을 기반으로 한 인증을 지원합니다. 이 샘플 코드는 API를 사용하지 않고 직접 플랫폼 코드와 통합하는 SpringBoot 프로젝트입니다.`
+
+**RCM-MicroShop을 Monolithic 모드로 띄울 때 사용할 수 있는 boilerplate code**
+
+
+- 인증을 JWT 대신 SpringSecurity 의 기본 Authentication 을 사용합니다.
+- RESTful API 대신 서비스 메소드를 직접 호출합니다. (platform.config.webmvc.front=true 설정을 통해 RESTful API를 사용할 수도 있습니다.)
+
+
+`RCM-MicroShop 플랫폼의 코드는 https://github.com/rchemist/release-micro 에 공개되어 있습니다.`
+
 
 ## 서비스 개발하기
 

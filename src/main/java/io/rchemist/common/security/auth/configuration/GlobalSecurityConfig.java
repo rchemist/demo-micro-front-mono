@@ -66,9 +66,9 @@ public class GlobalSecurityConfig extends WebSecurityConfigurerAdapter {
   public void configure(WebSecurity web) {
     web.ignoring()
         .antMatchers(
-            "/favicon.ico"
-            ,"/error"
-            , "/asset/**"
+//            "/favicon.ico"
+            "/error"
+            , "/assets/**"
         );
   }
 

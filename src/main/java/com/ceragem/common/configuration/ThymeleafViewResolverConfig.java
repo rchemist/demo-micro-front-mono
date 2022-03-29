@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ViewResolver;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+import org.thymeleaf.templatemode.TemplateMode;
 
 //@Configuration
 public class ThymeleafViewResolverConfig {
@@ -20,7 +21,7 @@ public class ThymeleafViewResolverConfig {
         templateResolver.setPrefix("classpath:templates/");
         templateResolver.setCharacterEncoding("UTF-8");
         templateResolver.setSuffix(".html");
-        templateResolver.setTemplateMode("LEGACYHTML5");
+        templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCacheable(isCache);
         return templateResolver;
     }
@@ -31,6 +32,7 @@ public class ThymeleafViewResolverConfig {
         templateEngine.setTemplateResolver(templateResolver());
         templateEngine.setTemplateEngineMessageSource(messageSource);
         //templateEngine.addDialect(layoutDialect());
+        templateEngine.setEnableSpringELCompiler(true);
 
         return templateEngine;
     }
@@ -47,7 +49,8 @@ public class ThymeleafViewResolverConfig {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine(messageSource));
         viewResolver.setCharacterEncoding("UTF-8");
-        viewResolver.setOrder(0);
+        viewResolver.setOrder(1);
+        viewResolver.setViewNames(new String[]{".html"});
         return viewResolver;
     }
 }

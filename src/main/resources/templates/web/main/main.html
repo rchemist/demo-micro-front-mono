@@ -1,8 +1,5 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout/defaultLayout}"
-      th:with="isSignIn=false"
-    >
+          layout:decorate="~{web/layout/defaultLayout}">
     <th:block layout:fragment="content">
         <div id="container">
             <section id="main" class="container-wrap">
@@ -15,14 +12,14 @@
                                 전체 서비스를 이용해 보세요.
                                 <button class="btn-sm btn-black md-ripples ripples-light">로그인<span class="ico-more-white"></span></button>
                             </h2>
-                        </th:block>>
+                        </th:block>
                         <!-- 로그인 상태 -->
                         <th:block th:if="${isSignIn}">
                             <h2 class="font-heading03">
                                 반가워요, 김종한님<br>
                                 어서오세요
                             </h2>
-                        </th:block>>
+                        </th:block>
                         <div class="box-search-word">
                             <h5>인기검색어</h5>
                             <div class="rolling-wrap">

@@ -1,16 +1,17 @@
+<!DOCTYPE html>
 <html lang="ko"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       th:with="isSignIn=false">
 <head>
-    <th:block th:replace="layout/partials/head"></th:block>
+    <th:block th:replace="web/layout/partials/head"></th:block>
     <th:block layout:fragment="application-css"></th:block>
 </head>
 <body>
     <div id="wrap">
-        <th:block th:replace="layout/partials/header"></th:block>
+        <th:block th:replace="web/layout/partials/header"></th:block>
         <th:block layout:fragment="content"></th:block>
-        <th:block th:replace="layout/partials/footer"></th:block>
+        <th:block th:replace="web/layout/partials/footer"></th:block>
     </div>
     <script src="/assets/web/js/lib/jquery.import.js"></script>
     <th:block layout:fragment="application-script"></th:block>

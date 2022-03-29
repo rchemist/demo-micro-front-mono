@@ -2,3 +2,6 @@ server:
   port: 8000
 https:
   port: 8010
+spring:
+  thymeleaf:
+    cache: false

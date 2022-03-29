@@ -1,7 +1,15 @@
 #원래 spring.config.import 의 값들은 모두 각 마이크로서비스에서 SpringCloud ConfigServer 를 통해 전달받는 값이다.
 #하지만 모놀리틱 모드에서는 SpringCloud 를 사용하지 않으므로 각 서비스가 받아 올 Config 정보가 없다.
 #따라서 각 서비스를 구동할 때 필요한 모든 정보를 아래와 같이 import 한다.
+
 spring:
+  thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
+    cache: true
+    check-template-location: true
+    order: 0
+    -- mode: HTML5
   config:
     on-not-found: ignore
     import:

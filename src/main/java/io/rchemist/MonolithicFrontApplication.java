@@ -49,7 +49,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableAsync
 @EnableScheduling
 @SpringBootApplication(
-    scanBasePackages = {"io.rchemist"},
+    scanBasePackages = {"io.rchemist","com.ceragem"},
     exclude = {  DataSourceAutoConfiguration.class, UserDetailsServiceAutoConfiguration.class, LiquibaseAutoConfiguration.class, MongoAutoConfiguration.class, MongoDataAutoConfiguration.class, ElasticsearchRestClientAutoConfiguration.class
     })
 @Slf4j

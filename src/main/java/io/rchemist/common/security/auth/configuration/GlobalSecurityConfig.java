@@ -68,9 +68,7 @@ public class GlobalSecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers(
             "/favicon.ico"
             ,"/error"
-            , "/css/**"
-            , "/js/**"
-            , "/images/**"
+            , "/asset/**"
         );
   }
 

@@ -54,7 +54,8 @@
     <lombok.version>1.18.20</lombok.version>
     <thymeleaf.extras.java8time>3.0.4.RELEASE</thymeleaf.extras.java8time>
     <thymeleaf.extras.data.attribute.version>2.0.1</thymeleaf.extras.data.attribute.version>
-    <thymeleaf.extras.springsecurity5.version>3.0.4.RELEASE</thymeleaf.extras.springsecurity5.version>
+    <thymeleaf.extras.springsecurity5.version>3.1.0.M1</thymeleaf.extras.springsecurity5.version>
+    <thymeleaf-layout-dialect.version>3.1.0</thymeleaf-layout-dialect.version>
     <javaassist.version>3.26.0-GA</javaassist.version>
     <jedis.version>3.6.1</jedis.version>
     <querydsl.version>5.0.0</querydsl.version>
@@ -609,6 +610,32 @@
       <artifactId>spring-boot-maven-plugin</artifactId>
       <version>2.6.1</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.ultraq.thymeleaf</groupId>
+      <artifactId>thymeleaf-layout-dialect</artifactId>
+      <version>${thymeleaf-layout-dialect.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.thymeleaf.extras</groupId>
+      <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+      <version>${thymeleaf.extras.springsecurity5.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.thymeleaf.extras</groupId>
+      <artifactId>thymeleaf-extras-java8time</artifactId>
+      <version>${thymeleaf.extras.java8time}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.mxab.thymeleaf.extras</groupId>
+      <artifactId>thymeleaf-extras-data-attribute</artifactId>
+      <version>${thymeleaf.extras.data.attribute.version}</version>
+    </dependency>
+
 
   </dependencies>
 
